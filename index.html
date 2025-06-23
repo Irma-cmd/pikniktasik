@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyewaan Kursi Lipat Outdoor Piknik Tasik</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --accent: #3498db;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        h1 span {
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1527529482837-4698179dc6ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            margin-left: 1rem;
+        }
+        
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary);
+        }
+        
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .about-text p {
+            margin-bottom: 1rem;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature i {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .products {
+            background-color: #f5f7fa;
+        }
+        
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .product-info p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .contact {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+        }
+        
+        .contact .section-title h2 {
+            color: white;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-info p {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info i {
+            margin-right: 1rem;
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .social-links {
+            margin-bottom: 1rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1><span>Piknik Tasik</span> Rentals Chair</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">Tentang Kami</a></li>
+                    <li><a href="#syarat">Syarat&Ketentuan</a></li>
+                    <li><a href="#products">Produk</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" style="background: url('images/ab.jpeg') center/cover no-repeat;">
+        <div class="hero-content">
+            <h2> Piknik Tasik</h2>
+            <div>
+                <h2 class="display-4 mb-3">Nikmati Piknik Nyaman Tanpa Ribet!</h2>
+                <h3 class="lead">Sewa kursi lipat premium kami dan rasakan kemudahan beraktivitas outdoor dengan kenyamanan maksimal</h3>
+            </div>
+            <p>Solusi Untuk Liburan Aeshtetic dan Mengesankan.</p>
+            <div class="hero-buttons">
+                <a href="#products" class="btn">Lihat Produk</a>
+                <a href="#contact" class="btn btn-outline">Hubungi Kami</a>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section id="about">
+        <div class="section-title">
+            <h2>Tentang Kami</h2>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <p class="mb-4">Piknik Tasik hadir sebagai solusi praktis bagi para pecinta alam dan petualang yang ingin menikmati kenyamanan di setiap perjalanan. Kami menyediakan penyewaan kursi lipat outdoor yang ringan, kokoh, dan mudah dibawa, cocok untuk berbagai aktivitas luar ruangan seperti piknik, camping, memancing, hingga acara santai di tepi pantai. Dengan kualitas terbaik dan desain ergonomis, kursi kami memastikan pengalaman duduk yang nyaman di mana pun Anda berada. Kami percaya bahwa menikmati keindahan alam tidak harus merepotkan, itulah mengapa Piknik Tasik hadir untuk membuat momen traveling Anda lebih praktis dan menyenangkan.</p>
+          <p class="mb-4">Owner usaha ini yaitu Syifa Nur Azkia.</p>
+            </div>
+            <div class="package-img">
+                <img src="images/b.jpeg" >
+            </div>
+        </div>
+    </div>
+        </section>
+        <section id="benefit" class="py-5 bg-light">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Keuntungan Memilih Kami</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body text-center">
+                                <i class="fas fa-check-circle fa-3x text-success mb-3"></i>
+                                <h4>Kualitas Premium</h4>
+                                <p>Kursi lipat dengan material kuat dan tahan lama, mampu menopang beban hingga 150kg</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body text-center">
+                                <i class="fas fa-truck fa-3x text-primary mb-3"></i>
+                                <h4>Gratis Pengantaran</h4>
+                                <p>Area Tasikmalaya kota dengan minimal pemesanan 3 paket</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body text-center">
+                                <i class="fas fa-clock fa-3x text-warning mb-3"></i>
+                                <h4>Proses Cepat</h4>
+                                <p>Pemesanan bisa dilakukan H-1 dengan konfirmasi instan via WhatsApp</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>        
+        <section id="syarat">
+        <div class="site-section bg-light" style="margin-top: -120px;">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6 mx-auto text-center mb-5 section-heading">
+                  <h2 class="mb-5">Syarat & Ketentuan</h2>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="text-center p-4 item">
+                    <img class="img-circle" src="images/booking.jpg" width="120" height="120">
+                    <h2 class="h5">Pemesanan Harus Dilakukan 2 hari Sebelum Acara, Pembatalan Berlaku 1 hari Sebelum Acara</h2>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="text-center p-4 item">
+                    <img class="img-circle" src="images/pembayaran.png" width="120" height="120">
+                    <h2 class="h5">Melakukan Pembayaran Awal (DP), 50% dari Harga Paket yang Telah DiPilih</h2>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="text-center p-4 item">
+                    <img class="img-circle" src="images/transfer.jpg" width="120" height="120">
+                    <h2 class="h5">Proses Pembayaran Awal Berlaku 3(Tiga) Hari dari Melakukan Pemesanan dan DiTransfer pada Nomor Rekening yang Sudah dikirim oleh admin</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div> 
+          </section>
+          <section id="whochase">
+          <div class="site-section bg-light" style="margin-top: -140px;">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6 mx-auto text-center mb-5 section-heading">
+                  <h2 class="mb-5">Why Chose Us?</h2>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="text-center p-4 item">
+                    <img class="img-circle" src="images/kualitas.png" width="120" height="120">
+                    <h2 class="h5">Kualitas Terjamin</h2>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="text-center p-4 item">
+                    <img class="img-circle" src="images/kalender.png" width="120" height="120">
+                    <h2 class="h5">Tepat Waktu</h2>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="text-center p-4 item">
+                    <img class="img-circle" src="images/user.png" width="120" height="120">
+                    <h2 class="h5">User Friendly</h2>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="text-center p-4 item">
+                    <img class="img-circle" src="images/dompet.png" width="120" height="120">
+                    <h2 class="h5">Lebih Hemat</h2>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="text-center p-4 item">
+                    <img class="img-circle" src="images/lokasi.png" width="120" height="120">
+                    <h2 class="h5">Mudah Ditemukan</h2>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="text-center p-4 item">
+                    <img class="img-circle" src="images/keamanan.png" width="120" height="120">
+                    <h2 class="h5">Keamanan Data Terjamin</h2>
+                  </div>
+                </div>
+              </div>
+           
+            </div>
+          </div>
+    </section>
+</section>
+    <section id="products" class="products">
+        <div class="section-title">
+            <h2>Produk Kami</h2>
+        </div>
+        <!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyewaan Kursi Lipat Outdoor - Paket Lengkap</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #e74c3c;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --accent: #3498db;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+        }
+        
+        .bg-light {
+            background-color: var(--light) !important;
+        }
+        
+        .section-heading {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .section-heading h2 {
+            font-weight: 700;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-heading h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .pelaminan {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .pelaminan:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .pelaminan-body {
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .pelaminan-body h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .price {
+            font-size: 1.4rem;
+            color: var(--secondary);
+            font-weight: 700;
+            display: block;
+            margin: 15px 0;
+        }
+        
+        .pelaminan-body b {
+            display: block;
+            margin: 8px 0;
+            font-weight: 500;
+            color: #555;
+        }
+        
+        .badge-status {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+        
+        .available {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        
+        .package-img {
+            height: 200px;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .package-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .pelaminan:hover .package-img img {
+            transform: scale(1.05);
+        }
+        
+        .btn-rent {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 8px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-rent:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .pelaminan-body {
+                padding: 20px;
+            }
+            
+            .pelaminan-body h3 {
+                font-size: 1.3rem;
+            }
+            
+            .price {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="site-section bg-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mx-auto text-center mb-5 section-heading">
+                    <h2>Paket Kursi Size M</h2>
+                </div>
+            </div>
+            <div class="row g-4">
+                <!-- Paket Size M -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="pelaminan">
+                        <div class="package-img">
+                            <img src="images/paket1.jpg" alt="Paket M - A">
+                        </div>
+                        <div class="pelaminan-body">
+                            <h3>Paket M - A</h3>
+                            <strong class="price">Rp 20.000/hari</strong>
+                            <b>Kursi double (2) + Tripod</b>
+                            <span class="badge-status available">Tersedia</span>
+                            <button class="btn btn-rent" onclick="sewaWhatsApp('Paket M - A', 'Rp 20.000/hari')">Sewa Sekarang</button>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-6 col-lg-4">
+                    <div class="pelaminan">
+                        <div class="package-img">
+                            <img src="images/paket2.jpg" alt="Paket M - B">
+                        </div>
+                        <div class="pelaminan-body">
+                            <h3>Paket M - B</h3>
+                            <strong class="price">Rp 15.000/hari</strong>
+                            <b>Kursi single (1) + Tripod</b>
+                            <span class="badge-status available">Tersedia</span>
+                            <button class="btn btn-rent" onclick="sewaWhatsApp('Paket M - B', 'Rp 15.000/hari')">Sewa Sekarang</button>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-6 col-lg-4">
+                    <div class="pelaminan">
+                        <div class="package-img">
+                            <img src="images/paket5.jpg" alt="Paket M - C">
+                        </div>
+                        <div class="pelaminan-body">
+                            <h3>Paket M - C</h3>
+                            <strong class="price">Rp 20.000/hari</strong>
+                            <b>Kursi single (1) + Meja (1) + Tripod</b>
+                            <span class="badge-status available">Tersedia</span>
+                            <button class="btn btn-rent" onclick="sewaWhatsApp('Paket M - C', 'Rp 20.000/hari')">Sewa Sekarang</button>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-6 col-lg-4">
+                    <div class="pelaminan">
+                        <div class="package-img">
+                            <img src="images/paket4.jpg" alt="Paket M - D">
+                        </div>
+                        <div class="pelaminan-body">
+                            <h3>Paket M - D</h3>
+                            <strong class="price">Rp 50.000/hari</strong>
+                            <b>Kursi quadruple (4) + Meja (1) + Tripod</b>
+                            <span class="badge-status available">Tersedia</span>
+                            <button class="btn btn-rent" onclick="sewaWhatsApp('Paket M - D', 'Rp 50.000/hari')">Sewa Sekarang</button>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-6 col-lg-4">
+                    <div class="pelaminan">
+                        <div class="package-img">
+                            <img src="images/paket3.jpg" alt="Paket M - E">
+                        </div>
+                        <div class="pelaminan-body">
+                            <h3>Paket M - E</h3>
+                            <strong class="price">Rp 30.000/hari</strong>
+                            <b>Kursi double (2) + Meja (1) + Tripod</b>
+                           
+                            <span class="badge-status available">Tersedia</span>
+                            <button class="btn btn-rent" onclick="sewaWhatsApp('Paket M - E', 'Rp 30.000/hari')">Sewa Sekarang</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <script>
+            function sewaWhatsApp(namaPaket, harga) {
+                var nomorWA = "6282215465550"; // Ganti dengan nomor WhatsApp Anda
+                var pesan = "Halo, saya ingin menyewa " + namaPaket + " dengan harga " + harga + ". Apakah masih tersedia?";
+                var url = "https://wa.me/" + nomorWA + "?text=" + encodeURIComponent(pesan);
+                
+                window.open(url, "_blank"); // Buka WhatsApp di tab baru
+            }
+            </script>
+            
+    
+    <div class="site-section bg-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mx-auto text-center mb-5 section-heading">
+                    <h2>Paket Kursi Size XL</h2>
+                </div>
+            </div>
+            <div class="row g-4">
+                <!-- Paket Size XL -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="pelaminan">
+                        <div class="package-img">
+                            <img src="images/paketa.jpg" alt="Paket XL - A">
+                        </div>
+                        <div class="pelaminan-body">
+                            <h3>Paket XL - A</h3>
+                            <strong class="price">Rp 25.000/hari</strong>
+                            <b>Kursi double (2) + Tripod</b>
+                            <span class="badge-status available">Tersedia</span>
+                            <button class="btn btn-rent" onclick="sewaWhatsApp('Paket XL - A', 'Rp 25.000/hari')">Sewa Sekarang</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="pelaminan">
+                        <div class="package-img">
+                            <img src="images/paketb.jpg" alt="Paket XL - B">
+                        </div>
+                        <div class="pelaminan-body">
+                            <h3>Paket XL - B</h3>
+                            <strong class="price">Rp 15.000/hari</strong>
+                            <b>Kursi single (1) + Tripod</b>
+                            <span class="badge-status available">Tersedia</span>
+                            <button class="btn btn-rent" onclick="sewaWhatsApp('Paket XL - B', 'Rp 15.000/hari')">Sewa Sekarang</button>
+                    </div>
+                </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="pelaminan">
+                        <div class="package-img">
+                            <img src="images/paketc.jpg" alt="Paket XL - C">
+                        </div>
+                        <div class="pelaminan-body">
+                            <h3>Paket XL - C</h3>
+                            <strong class="price">Rp 25.000/hari</strong>
+                            <b>Kursi single (1) + Meja (1) + Tripod</b>
+                            <span class="badge-status available">Tersedia</span>
+                            <button class="btn btn-rent" onclick="sewaWhatsApp('Paket XL - C', 'Rp 25.000/hari')">Sewa Sekarang</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="pelaminan">
+                        <div class="package-img">
+                            <img src="images/paketd.jpg" alt="Paket XL - D">
+                        </div>
+                        <div class="pelaminan-body">
+                            <h3>Paket XL - D</h3>
+                            <strong class="price">Rp 50.000/hari</strong>
+                            <b>Kursi quadruple (4) + Meja (1) + Tripod</b>
+                            <span class="badge-status available">Tersedia</span>
+                            <button class="btn btn-rent" onclick="sewaWhatsApp('Paket XL - D', 'Rp 50.000/hari')">Sewa Sekarang</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="pelaminan">
+                        <div class="package-img">
+                            <img src="images/pakete.jpg" alt="Paket XL-E">
+                </div>
+                        <div class="pelaminan-body">
+                            <h3>Paket XL - E</h3>
+                            <strong class="price">Rp 37.000/hari</strong>
+                            <b>Kursi double (2) + Meja (1) + Tripod</b>
+                            <span class="badge-status available">Tersedia</span>
+                            <button class="btn btn-rent" onclick="sewaWhatsApp('Paket XL - E', 'Rp 37.000/hari')">Sewa Sekarang</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+
+    <script>
+        function sewaWhatsApp(namaPaket, harga) {
+            var nomorWA = "6282215465550"; // Ganti dengan nomor WhatsApp Anda
+            var pesan = "Halo, saya ingin menyewa " + namaPaket + " dengan harga " + harga + ". Apakah masih tersedia?";
+            var url = "https://wa.me/" + nomorWA + "?text=" + encodeURIComponent(pesan);
+            
+            window.open(url, "_blank"); // Buka WhatsApp di tab baru
+        }
+        </script>
+</body>
+</html>
+    </section>
+    <!-- Add this after Products section -->
+    <section id="alasan" class="py-5">
+        <div class="container">
+            <div class="section-title">
+                <h2>Mengapa Harus Sewa di Piknik Tasik?</h2>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-md-3 order-md-1">  <!-- Changed to col-md-4 and added order-md-1 -->
+                    <img src="images/kami.jpeg" alt="Alasan memilih kami" class="img-fluid rounded shadow w-100" style="max-width: 300px;">  <!-- Added w-100 and max-width -->
+                </div>
+                <div class="col-md-8 order-md-2">  <!-- Changed to col-md-8 and added order-md-2 -->
+                    <ul class="list-unstyled" style="margin-left: 2rem;">  <!-- Added left margin -->
+                        <li class="mb-3"><i class="fas fa-check text-success me-2"></i> <strong>Hemat Biaya</strong> - Tidak perlu membeli kursi mahal untuk sekali pakai</li>
+                        <li class="mb-3"><i class="fas fa-check text-success me-2"></i> <strong>Praktis</strong> - Kursi sudah siap pakai, tinggal bongkar pasang</li>
+                        <li class="mb-3"><i class="fas fa-check text-success me-2"></i> <strong>Fleksibel</strong> - Bisa sewa harian atau mingguan sesuai kebutuhan</li>
+                        <li class="mb-3"><i class="fas fa-check text-success me-2"></i> <strong>Full Set</strong> - Sudah termasuk tripod dan meja portable</li>
+                        <li class="mb-3"><i class="fas fa-check text-success me-2"></i> <strong>Higienis</strong> - Selalu dibersihkan setelah setiap pemakaian</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+    <div>
+    <div class="site-section bg-light" style="margin-top: -140px;">
+        <div class="site-wrap">
+            <div class="site-section bg-light">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 mx-auto text-center mb-5 section-heading">
+                            <h2 class="mb-5">Dokumentasi Pelanggan</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="text-center p-4 item">
+                                <img class="img-fluid rounded-circle" src="images/1.jpeg" alt="Dokumentasi 1">
+                                <h2 class="h5 mt-3">"✿"</h2>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="text-center p-4 item">
+                                <img class="img-fluid rounded-circle" src="images/2.jpeg" alt="Dokumentasi 2">
+                                <h2 class="h5 mt-3">"✿"</h2>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="text-center p-4 item">
+                                <img class="img-fluid rounded-circle" src="images/3.jpeg" alt="Dokumentasi 3">
+                                <h2 class="h5 mt-3">"✿"</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+</section>
+<!-- Add this after Dokumentasi section -->
+
+<section id="testimoni" class="py-5 bg-light">
+    <div class="container">
+        <div class="section-title">
+            <h2>Apa Kata Pelanggan Kami?</h2>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="d-flex mb-3">
+                            <img src="images/cewe1.jpg" class="rounded-circle me-3" width="60" height="60" alt="Testimoni 1">
+                            <div>
+                                <h5 class="mb-0">Rina Wijaya</h5>
+                                <div class="text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p>"Kursinya sangat nyaman dan kuat, pengiriman tepat waktu. Piknik keluarga jadi lebih menyenangkan!"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="d-flex mb-3">
+                            <img src="images/cowo.jpg" class="rounded-circle me-3" width="60" height="60" alt="Testimoni 2">
+                            <div>
+                                <h5 class="mb-0">Dika Pratama</h5>
+                                <div class="text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p>"Pelayanan ramah dan responsif. Kursi yang disewakan bersih dan kondisi baru. Recommended!"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="d-flex mb-3">
+                            <img src="images/cewe2.jpg" class="rounded-circle me-3" width="60" height="60" alt="Testimoni 3">
+                            <div>
+                                <h5 class="mb-0">Siti Aisyah</h5>
+                                <div class="text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p>"Harganya terjangkau untuk kualitas premium. Acara camping anak sekolah sukses berkat sewa di sini."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Add this before Contact section -->
+
+<section id="urgensi" class="py-5 bg-primary text-white">
+    <div class="container text-center">
+        <h2 class="mb-4">PROMO KHUSUS HARI INI SAJA!</h2>
+        <div class="display-4 mb-3">DISKON 20%</div>
+        <p class="lead mb-4">Untuk pemesanan melalui WhatsApp dengan kode <strong>PIKNIK20</strong></p>
+        <div class="countdown d-flex justify-content-center mb-4" id="countdown">
+            <div class="mx-2">
+                <div class="bg-dark p-3 rounded">
+                    <div class="display-4" id="hours">12</div>
+                    <div>Jam</div>
+                </div>
+            </div>
+            <div class="mx-2">
+                <div class="bg-dark p-3 rounded">
+                    <div class="display-4" id="minutes">45</div>
+                    <div>Menit</div>
+                </div>
+            </div>
+            <div class="mx-2">
+                <div class="bg-dark p-3 rounded">
+                    <div class="display-4" id="seconds">30</div>
+                    <div>Detik</div>
+                </div>
+            </div>
+        </div>
+        <a href="#contact" class="btn btn-light btn-lg">Pesan Sekarang</a>
+    </div>
+</section>
+
+<section id="bonus" class="py-5">
+    <div class="container">
+        <div class="section-title">
+            <h2>Bonus Spesial Untuk Anda</h2>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-md-4">
+                <img src="images/bonus.jpg" alt="Bonus" class="img-fluid rounded shadow">
+            </div>
+            <div class="col-md-6">
+                <ul class="list-unstyled">
+                    <li class="mb-3"><i class="fas fa-gift text-danger me-2"></i> <strong>Gratis</strong> tas penyimpanan untuk pemesanan minimal 5 paket</li>
+                    <li class="mb-3"><i class="fas fa-gift text-danger me-2"></i> <strong>Gratis</strong> bimbingan setup peralatan untuk pemesanan pertama</li>
+                    <li class="mb-3"><i class="fas fa-gift text-danger me-2"></i> <strong>Gratis</strong> 1 botol minum untuk pemesanan di hari ulang tahun</li>
+                    <li class="mb-3"><i class="fas fa-gift text-danger me-2"></i> <strong>Cashback 10%</strong> untuk pemesanan berikutnya</li>
+                </ul>
+                <div class="alert alert-warning mt-4">
+                    <i class="fas fa-exclamation-circle me-2"></i> Bonus berlaku hingga 31 Desember 2025 atau selama persediaan masih ada
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="cta" class="py-5 bg-dark text-white text-center">
+    <div class="container">
+        <h2 class="mb-4">Siap Memesan Kursi Lipat Untuk Acara Anda?</h2>
+        <p class="lead mb-4">Jangan sampai kehabisan stok! Hubungi kami sekarang juga</p>
+        <a href="https://wa.me/6282215465550" class="btn btn-success btn-lg me-2"><i class="fab fa-whatsapp me-2"></i> WhatsApp</a>
+        <a href="tel:082215465550" class="btn btn-light btn-lg"><i class="fas fa-phone me-2"></i> Telepon Sekarang</a>
+    </div>
+</section>
+
+<section id="garansi" class="py-5 bg-light">
+    <div class="container">
+        <div class="section-title">
+            <h2>Garansi Kepuasan Kami</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-8 mx-auto text-center">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <i class="fas fa-shield-alt fa-4x text-primary mb-4"></i>
+                        <h3 class="mb-3">100% Garansi Kepuasan</h3>
+                        <p>Kami menjamin kualitas produk dan pelayanan kami. Jika Anda tidak puas dengan layanan kami, kami akan mengembalikan uang Anda sepenuhnya!</p>
+                        <div class="mt-4">
+                            <i class="fas fa-check-circle text-success me-2"></i> Garansi penggantian jika produk rusak saat diterima<br>
+                            <i class="fas fa-check-circle text-success me-2"></i> Garansi uang kembali jika pengiriman terlambat<br>
+                            <i class="fas fa-check-circle text-success me-2"></i> Garansi kualitas bahan dan kekuatan produk
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="faq" class="py-5">
+    <div class="container">
+        <div class="section-title">
+            <h2>Pertanyaan yang Sering Diajukan</h2>
+        </div>
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                        Berapa lama minimal sewa?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Minimal sewa adalah 1 hari. Untuk acara besar bisa nego khusus untuk sewa mingguan.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                        Apakah ada biaya pengantaran?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Gratis pengantaran untuk wilayah Tasikmalaya kota dengan minimal pemesanan 3 paket. Untuk daerah lain dikenakan biaya sesuai jarak.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                        Bagaimana jika produk rusak saat disewa?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Kami menyediakan garansi penggantian jika produk rusak bukan karena kesalahan penyewa. Untuk kerusakan karena kelalaian penyewa akan dikenakan biaya perbaikan.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                        Bisa pesan mendadak hari H?
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Bisa selama stok masih tersedia. Untuk pemesanan mendadak dikenakan biaya tambahan 20% dari harga sewa.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="contact" class="contact">
+        <div class="section-title">
+            <h2>Kontak Kami</h2>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Hubungi Kami</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Jl. Sutisna Senjaya, Kota Tasikmalaya</p>
+                <p><i class="fas fa-phone"></i> 082215465550</p>
+                <p><i class="fas fa-envelope"></i> info@pikniktasik</p>
+                <p><i class="fas fa-clock"></i> Buka Setiap Hari Kecuali Kiamat: 24 Jam</p>
+            </div>
+            <div class="contact-form">
+                <form onsubmit="kirimWhatsApp(event)">
+                    <input type="text" id="nama" placeholder="Nama Anda" required>
+                    <input type="email" id="email" placeholder="Email Anda" required>
+                    <input type="tel" id="telepon" placeholder="Nomor Telepon">
+                    <textarea id="pesan" placeholder="Pesan Anda" required></textarea>
+                    <button type="submit" class="btn">Kirim Pesan</button>
+                </form>
+            </div>
+            
+            <script>
+            function kirimWhatsApp(event) {
+                event.preventDefault(); // Mencegah form submit default
+            
+                var nama = document.getElementById("nama").value;
+                var email = document.getElementById("email").value;
+                var telepon = document.getElementById("telepon").value || "-";
+                var pesan = document.getElementById("pesan").value;
+                
+                var nomorWA = "6282215465550"; // Ganti dengan nomor WhatsApp tujuan
+                var teksPesan = `Halo, saya ingin menyewa/memesan kursinya, dengan pesanan atas Nama: ${nama} , ${email} , ${telepon} , ${pesan}`;
+                var urlWA = `https://wa.me/${nomorWA}?text=` + encodeURIComponent(teksPesan);
+            
+                window.open(urlWA, "_blank"); // Buka WhatsApp di tab baru
+            }
+            </script>            
+        </div>
+    </section>
+<!-- Add this before Footer -->
+<div id="nb" class="bg-warning py-3 text-center">
+    <div class="container">
+        <p class="mb-0"><strong>Catatan:</strong> Stok terbatas selama musim liburan. Segera konfirmasi pemesanan Anda dengan DP 50% untuk mengamankan stok.</p>
+    </div>
+</div>
+
+<!-- Add this JavaScript before closing body tag -->
+<script>
+    // Countdown timer
+    function updateCountdown() {
+        const now = new Date();
+        const endOfDay = new Date();
+        endOfDay.setHours(23, 59, 59, 999);
+        
+        const diff = endOfDay - now;
+        
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        
+        document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+        document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+        document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+    }
+    
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+    
+    // Initialize Bootstrap components
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    });
+</script>
+    <footer>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p>&copy; 2025 Piknik Tasik Chair Rentals. All Rights Reserved. By Nur Irmayani</p>
+    </footer>
+
+    <script>
+        // Simple JavaScript for mobile menu toggle (can be expanded)
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Change header background on scroll
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 50) {
+                    header.style.background = 'var(--primary)';
+                    header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+                } else {
+                    header.style.background = 'linear-gradient(135deg, var(--primary), var(--dark))';
+                    header.style.boxShadow = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
